@@ -155,6 +155,7 @@ PACKAGES=(
     socat
     conntrack
     ipset
+    bridge-utils
 )
 
 if ! apt-get install -y "${PACKAGES[@]}"; then
@@ -292,6 +293,17 @@ cat << EOF > /root/.ssh/config
 Host *
     StrictHostKeyChecking no
 EOF
+
+cd /root/
+git clone --depth 1 \
+  https://github.com/azalio/kubernetes-the-hard-way.git
+cd kubernetes-the-hard-way
+mkdir downloads
+wget -q --show-progress \
+  --https-only \
+  --timestamping \
+  -P downloads \
+  -i downloads.txt
 
 else
 

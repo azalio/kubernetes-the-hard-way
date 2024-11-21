@@ -24,7 +24,7 @@ done
 for host in node-0 node-1; do
   scp \
     downloads/runc.arm64 \
-    downloads/crictl-v1.28.0-linux-arm.tar.gz \
+    downloads/crictl-v1.31.1-linux-arm64.tar.gz \
     downloads/cni-plugins-linux-arm64-v1.3.0.tgz \
     downloads/containerd-1.7.8-linux-arm64.tar.gz \
     downloads/kubectl \
@@ -95,7 +95,7 @@ Install the worker binaries:
 ```bash
 {
   mkdir -p containerd
-  tar -xvf crictl-v1.28.0-linux-arm.tar.gz
+  tar -xvf crictl-v1.31.1-linux-arm64.tar.gz
   tar -xvf containerd-1.7.8-linux-arm64.tar.gz -C containerd
   tar -xvf cni-plugins-linux-arm64-v1.3.0.tgz -C /opt/cni/bin/
   mv runc.arm64 runc
